@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Units</title>
+    <style>
+      .box {
+        background-color: tomato;
+        height: 30px;
+        margin-bottom: 10px;
+        font-size: 30px;
+      }
+      .hundred-px {
+        width: 100px;
+      }
+      .fifty-per {
+        width: 50%;
+      }
+      .fifty-vw {
+        width: 50vw;
+      }
+      .parent-container {
+        border: 3px solid black;
+        width: 700px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Units</h1>
+
+    <div class="box hundred-px">100px</div>
+
+    <div class="box fifty-per">50%</div>
+    <div class="box fifty-vw">50vw</div>
+
+    <div class="parent-container">
+      <div class="box fifty-per">50%</div>
+      <div class="box fifty-vw">50vw</div>
+    </div>
+  </body>
+</html>
