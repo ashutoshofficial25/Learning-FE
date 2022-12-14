@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  background-color: #000;
+  color: gray;
+}
+.section-one-main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.section-one-container {
+  display: flex;
+  padding: 0 5px;
+}
+.section-one-left-container {
+  display: flex;
+  margin-left: -40px;
+}
+.section-one-left-container > img {
+  width: 300px;
+}
+.section-one-right-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+}
+
+.section-one-details-title {
+  font-weight: bold;
+  font-size: 60px;
+}
+.section-one-details-features {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: -5px;
+}
+.down-arrow-container > img {
+  width: 30px;
+  height: fit-content;
+}
+.down-arrow-container > img :hover {
+  transform: scale(1.3);
+}
+
+.section-two-main-container {
+  height: 100vh;
+  padding: 50px 5%;
+}
+.section-two-specification-details > p {
+  font-size: 40px;
+}
+.section-two-specification-details > ul > li {
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+.upward-arrow-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.upward-arrow-container > img {
+  width: 30px;
+  height: fit-content;
+}
+.upward-arrow-container > img:hover {
+  margin-bottom: 10px;
+}
+
+.section-three-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+}
+.section-three-details-container {
+  flex: 0.5;
+  margin: 0 40px;
+  text-align: center;
+}
+
+.section-three-details_title {
+  font-size: 35px;
+  font-weight: 700;
+  color: whitesmoke;
+}
+.section-three-setails-subtitle {
+  font-size: 24px;
+}
+.section-three-learn-more-container {
+  color: lightskyblue;
+  font-size: 20px;
+  font-weight: 700;
+}
+.section-three-learn-more-container > p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.horizental-line {
+  width: 60%;
+  margin-top: 250px;
+}
+
+.section-four-container {
+  display: flex;
+  justify-content: space-between;
+}
+.section-three-details-container {
+  color: white;
+}
+.section-three-details_title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.section-three-setails-subtitle {
+  font-style: 16px;
+  color: gray;
+}
+.section-fourlearn-more-container > p {
+  color: lightskyblue;
+}
+.section-fourlearn-more-container > p:hover {
+  text-decoration: underline;
+}
