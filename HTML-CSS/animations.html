@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .parent-square {
+        height: 300px;
+        width: 300px;
+        background-color: gold;
+      }
+      .square {
+        width: 50%;
+        height: 50%;
+        background-color: tomato;
+
+        transition: 5s ease-in;
+      }
+      .parent-square:hover .square {
+        /* transform: translateY(100%); */
+        /* transform: translateX(100%);
+        background-color: blueviolet; */
+        animation: move 1s ease-in-out forwards infinite;
+      }
+      @keyframes move {
+        0% {
+          transform: translateX(0);
+        }
+        33% {
+          transform: translateY(100%);
+        }
+        66% {
+          transform: translateX(100%) translateY(100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Animations</h1>
+    <div class="parent-square">
+      <div class="square"></div>
+    </div>
+  </body>
+</html>
