@@ -5,3 +5,22 @@ div.navbar {
 .signup-wrapper {
   display: none;
 }
+.home-title {
+  font-size: 40px;
+  margin-top: 100px;
+}
+
+.login-wrapper {
+  width: 600px;
+  margin: 50px auto;
+}
+.input-group {
+  margin-bottom: 15px;
+}
+
+.login-wrapper.loginBtn,
+.signup-wrapper.signupBtn {
+  cursor: pointer;
+  width: 300px;
+  margin: 20px auto;
+}
