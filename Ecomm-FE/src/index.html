@@ -10,22 +10,22 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/common.css" />
   </head>
   <body>
-    <div id="home-page">
-      <div class="navbar header navbar-expand-lg navbar-light">
+    <div id="homePage">
+      <div id="header">
         <div class="container">
-          <div class="row w-100">
+          <div class="row">
             <div class="header-wrapper d-flex justify-content-between">
               <div class="logo">
-                <a class="navbar-brand" href="index.html">Ecommerce</a>
+                <a class="text-decoration-none" href="index.html">Ecommerce</a>
               </div>
               <div class="user-actions d-flex">
-                <a class="text-decoration-none" href="#"> Cart</a>
-                <div class="user-intro">user name</div>
-                <div class="logoutBtn">Logout</div>
+                <a class="text-decoration-none" href="cart.html">Cart</a>
+                <div class="user-intro" id="userIntro">Hi User</div>
+                <div class="logout-btn" id="logoutBtn">Logout</div>
               </div>
             </div>
           </div>
@@ -37,16 +37,87 @@
           <h2 class="home-title text-center">Welcome to Ecommerce</h2>
 
           <div
-            class="category-item categoryList d-flex justify-content-center align-items-center"
+            class="category-list d-flex justify-content-center align-items-center flex-wrap"
             id="categoryList"
           >
-            <a class="text-decoration-none text-white" href="#">All Products</a>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
+            <div
+              class="category-item rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <a class="text-decoration-none text-white" href="#">
+                All Products
+              </a>
+            </div>
           </div>
-          <div class="category-item rounded-3">Groceries</div>
-          <div class="category-title text-center">Select a category</div>
+          <div class="category-title text-center">
+            Select a category to start shopping
+          </div>
         </div>
       </div>
     </div>
-    <script src="./js/index.js"></script>
+
+    <script src="js/home.js"></script>
   </body>
 </html>

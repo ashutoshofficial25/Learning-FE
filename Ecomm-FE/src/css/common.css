@@ -2,21 +2,25 @@
   color: black;
   margin-right: 40px;
 }
-.user-actions .logoutBtn {
+
+.user-actions .logout-btn {
   margin-left: 40px;
   cursor: pointer;
 }
-div.navbar {
-  padding: 20px 0;
+
+#header {
   background-color: lightgray;
+  padding: 24px 0;
 }
 
-a.navbar-brand {
-  font-size: 24px;
+.header-wrapper a {
+  color: black;
 }
+
 .user-actions {
   line-height: 24px;
 }
+
 .logo a {
-  font-style: 24px;
+  font-size: 24px;
 }
