@@ -1,10 +1,10 @@
 // variables
 
-const loginFomm = getElement("login-form");
+const loginForm = getElement("login-form");
 const signupForm = getElement("signup-form");
 
 const showLoginBtn = getElement("showLoginBtn");
-const showSignupBtn = getElement("showSingupBtn");
+const showSignupBtn = getElement("showSignUpBtn");
 
 const loginUsername = getElement("loginUsername");
 const signupUsername = getElement("signupUsername");
@@ -28,8 +28,16 @@ loginBtn.addEventListener("click", loginFn);
 
 // function
 
-function showSignup() {}
-function showLogin() {}
+function showSignup() {
+  console.log("hellog");
+  loginForm.classList.add("d-none");
+  signupForm.classList.remove("d-block");
+}
+function showLogin() {
+  console.log("hello");
+  loginForm.classList.remove("d-block");
+  signupForm.classList.add("d-none");
+}
 function signupFn() {}
 function loginFn() {}
 
