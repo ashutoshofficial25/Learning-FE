@@ -1,4 +1,41 @@
+body {
+  background: url("./Todo-BG.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 110vh;
+}
+
+#header {
+  background-color: #152f5222;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.logo-img {
+  width: 80px;
+  height: 40px;
+}
+
 .list-group-item {
   display: flex;
   justify-content: space-between;
+}
+.card-body {
+  height: 80vh;
+  background-color: #ffffffa5;
+}
+.card-body > .text {
+  background: #1130cf;
+  background: radial-gradient(
+    ellipse farthest-corner at top left,
+    #1130cf 26%,
+    #cf1512 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+ul {
+  overflow-y: scroll;
+  height: 40vh;
 }

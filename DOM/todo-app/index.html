@@ -13,11 +13,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="header" class="bg-secondary text-white p-1 mb-2">
+    <div id="header" class="p-2 mb-2">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h1 id="header-title">TODO APP</h1>
+            <img
+              class="logo-img"
+              src="https://img.icons8.com/nolan/64/checklist.png"
+            />
           </div>
 
           <div class="col-md-6">
@@ -32,9 +35,9 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container mt-5">
       <div id="middle-section" class="card card-body">
-        <h2 class="title">Add Todos</h2>
+        <h2 class="title text">Add Todos</h2>
 
         <form action="" id="addForm" class="form-inline mb-3">
           <input type="text" id="todo" name="todo" class="form-control mb-4" />
@@ -43,7 +46,7 @@
         </form>
         <div class="error-message" id="errormsg"></div>
 
-        <h2 class="title">Todos</h2>
+        <h2 class="title text">Todos</h2>
         <ul id="todos" class="list-group">
           <li class="list-group-item mb-2">
             Todos 1 <button class="btn btn-danger btn-sm delete">delete</button>
