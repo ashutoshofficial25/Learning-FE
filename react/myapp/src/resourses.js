@@ -1,7 +1,7 @@
 export const burgerConponentEnum = {
   BREADLOWER: "breadLower",
   BREADUPPER: "breadUpper",
-  CHEESE: "Cheese",
-  LETTUCE: "Lettuece",
+  CHEESE: "cheese",
+  LETTUCE: "lettuece",
   TOMATO: "tomato",
 };

@@ -1,0 +1,10 @@
+.tamato-group {
+  display: flex;
+}
+.tomato {
+  width: 50%;
+  background-color: red;
+  height: 20px;
+  margin: 2px;
+  border-radius: 15px;
+}
