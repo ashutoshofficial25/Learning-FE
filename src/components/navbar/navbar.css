@@ -1,0 +1,14 @@
+nav {
+  background-color: blueviolet;
+}
+.container {
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+.items {
+  display: flex;
+  gap: 2rem;
+}
