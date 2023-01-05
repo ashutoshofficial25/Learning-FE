@@ -15,9 +15,11 @@ export function findwinner(boxes) {
   for (let i = 0; i < rows.length; i++) {
     const [a, b, c] = rows[i];
 
-    if (boxes[a] && boxes[a] === boxes[b] && boxes[a]) {
+    if (boxes[a] && boxes[a] === boxes[b] && boxes[a] == boxes[c]) {
+      return a;
     }
   }
+  return null;
 }
 
 export function areAllBoxesClicked(boxes) {
@@ -30,8 +32,8 @@ export function areAllBoxesClicked(boxes) {
   });
 
   if (count == 9) {
-    return false;
-  } else {
     return true;
+  } else {
+    return false;
   }
 }

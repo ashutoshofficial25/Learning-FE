@@ -14,31 +14,41 @@ class Board extends React.Component {
       xIsNext: true,
     };
   }
-  handleBoxClick = (index) => {
+  handleBoxClick(index) {
     const boxes = this.state.boxes.slice();
 
     //stop the board when winning combinaion
-
-    let history = this.state.history;
-
-    //when all boxes are clicked
-
-    //mark the box with either x or o
-    boxes[index] = this.state.xIsNext ? "x" : "y";
-
-    // add the moves to the history
-
-    history.push(this.state.xIsNext ? "x" : "y");
-
-    //check for double click
 
     if (boxes[index] !== null) {
       return;
     }
 
+    //get current history
+    let history = this.state.history;
+
+    if (utils.findwinner(boxes)) {
+      return;
+    }
+
+    //stop the game if all boxes are clicked or filled
+
+    if (utils.areAllBoxesClicked(boxes) === true) {
+      return;
+    }
+
+    //mark the box with either x or o
+
+    boxes[index] = this.state.xIsNext ? "x" : "o";
+
+    //add the moves to the history
+
+    history.push(this.state.xIsNext ? "x" : "o");
+
+    //check for double click
+
     //update the state
     this.setState({
-      box: boxes,
+      boxes: boxes,
       history: history,
       xIsNext: !this.state.xIsNext,
     });
@@ -46,7 +56,15 @@ class Board extends React.Component {
     //winner
     utils.findwinner(boxes);
     //hande game restart
-  };
+  }
+
+  handleBoardRestart() {
+    this.setState({
+      boxes: Array(9).fill(null),
+      history: [],
+      xIsNext: true,
+    });
+  }
 
   render() {
     //get the winer if any
@@ -63,7 +81,7 @@ class Board extends React.Component {
     } else if (!!winner && isFilled) {
       status = "game drawn";
     } else {
-      status = "";
+      status = `its ${this.state.xIsNext ? "x" : "o"} turn`;
     }
 
     return (
@@ -129,6 +147,13 @@ class Board extends React.Component {
               );
             })}
         </ul>
+
+        {/* button for restart */}
+        {winner && (
+          <button className="btn" onClick={this.handleBoardRestart}>
+            Start New Game
+          </button>
+        )}
       </div>
     );
   }
