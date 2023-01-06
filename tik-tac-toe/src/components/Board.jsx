@@ -149,6 +149,9 @@ class Board extends React.Component {
         </ul>
 
         {/* button for restart */}
+
+        {winner && <h6>{status}</h6>}
+
         {winner && (
           <button className="btn" onClick={this.handleBoardRestart}>
             Start New Game
