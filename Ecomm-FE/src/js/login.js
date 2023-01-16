@@ -1,5 +1,5 @@
 // variables
-const BASE_URL = "https://relevel-ecomm-be.herokuapp.com/ecomm/api/v1";
+
 const loginForm = getElement("login-form");
 const signupForm = getElement("signup-form");
 
@@ -32,26 +32,21 @@ loginBtn.addEventListener("click", loginFn);
 // function
 
 function showSignup() {
-  console.log("hellog");
   loginForm.classList.add("d-none");
   signupForm.classList.remove("d-none");
   signupForm.classList.add("d-block");
 }
 function showLogin() {
-  console.log("hello");
   loginForm.classList.remove("d-none");
   loginForm.classList.add("d-block");
   signupForm.classList.add("d-none");
 }
 function signupFn() {
-  console.log(singupemail);
-  console.log(singupemail.value);
-  console.log(signupPassword.value);
-  console.log(signupUsername);
-
   if (signupUsername.value == "") {
+    updateAuthErrMsg("Username should not be empty!");
     return;
   } else if (signupPassword.value == "") {
+    updateAuthErrMsg("Password filed should not be empty!");
     return;
   } else {
     const data = {
@@ -67,13 +62,18 @@ function signupFn() {
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify(data),
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => updateAuthSuccessMsg(data.message))
+      .catch((error) => console.log(error));
   }
 }
 function loginFn() {
   if (loginUsername.value == "") {
+    updateAuthErrMsg("Username should not be empty!");
     return;
   } else if (loginPassword.value == "") {
+    updateAuthErrMsg("Password filed should not be empty!");
     return;
   } else {
     let data = {
@@ -91,20 +91,33 @@ function loginFn() {
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
-      .then(
-        (data) => (
+      .then((data) => {
+        if (data.accessToken) {
           localStorage.setItem("username", data?.username),
-          localStorage.setItem("id", data.id),
-          localStorage.setItem("email", data?.email)
-        )
-      );
-
-    if (localStorage.getItem("username")) {
-      window.location.href = "./index.html";
-    }
+            localStorage.setItem("id", data.id),
+            localStorage.setItem("email", data?.email);
+          localStorage.setItem("token", data?.accessToken);
+        } else if (data.message) {
+          updateAuthErrMsg(data.message);
+          setTimeout(() => {
+            updateAuthErrMsg("");
+          }, 1500);
+        }
+      });
   }
+}
+
+function updateAuthErrMsg(msg) {
+  authErrorMsg.innerText = msg;
+}
+function updateAuthSuccessMsg(msg) {
+  authSuccessMsg.innerText = msg;
 }
 
 function getElement(id) {
   return document.getElementById(id);
+}
+
+if (localStorage.getItem("username")) {
+  window.location.href = "index.html";
 }
