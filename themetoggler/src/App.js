@@ -1,7 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useContext } from "react";
+import { ThemeContext } from "./context/theme-context";
 
 function App() {
+  // const { theme, toggle, dark } = useContext(ThemeContext);
+
   return (
     <div className="App">
       <h1> theme Toggler</h1>

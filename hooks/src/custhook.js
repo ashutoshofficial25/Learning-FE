@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import useFetchData from "./customHookes/useFetchData";
 
-function App() {
+function custom() {
   const [users] = useFetchData("https://jsonplaceholder.typicode.com/users");
   const [dog] = useFetchData("https://dog.ceo/api/breeds/image/random");
 
@@ -18,7 +18,7 @@ function App() {
   // https://dog.ceo/api/breeds/image/random
 
   return (
-    <div className="App">
+    <div className="custom">
       <h2>{users[0]?.name}</h2>
       {users && users.map((user) => <h2 key={user?.name}>{user?.name}</h2>)}
       <img src={dog.message} width="400px" />
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default custom;

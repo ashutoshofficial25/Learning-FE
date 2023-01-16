@@ -7,7 +7,7 @@ const getUSer = () =>
     .then((response) => response.json)
     .then((data) => console.log(data));
 
-function App() {
+function hooks() {
   const [name, setName] = useState("");
   const [roles, setROles] = useState(null);
   const [roleList, setRoleList] = useState(null);
@@ -35,7 +35,7 @@ function App() {
   // };
 
   return (
-    <div className="App">
+    <div className="hooks">
       {/* <Counter /> */}
 
       <h1> User details</h1>
@@ -47,4 +47,4 @@ function App() {
   );
 }
 
-export default App;
+export default hooks;
