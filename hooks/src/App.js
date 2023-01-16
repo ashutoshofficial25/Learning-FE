@@ -1,40 +1,18 @@
-import React, { createContext, useContext } from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "./context/ThemeProvider";
 
-//1. Create a new context
-const UserContext = createContext();
-console.log(UserContext);
-
-//2.use a provider to wrap the component
 const App = () => {
+  const { toggle, toggleFunction } = useContext(ThemeContext);
+
   return (
-    <UserContext.Provider value="James Bond">
-      <div>
-        <User />
-      </div>
-    </UserContext.Provider>
+    <div
+      className="App"
+      style={{ backgroundColor: toggle ? "tomato" : "white" }}
+    >
+      <h1>Context API</h1>
+      <button onClick={toggleFunction}>change the theme</button>
+    </div>
   );
 };
-
-function User() {
-  // const contextValue = useContext(UserContext);
-  // console.log(contextValue);
-  return (
-    // <UserContext.Consumer> {(value) => <h1>{value}</h1>}</UserContext.Consumer>
-    <>
-      <User1 />
-      <User2 />
-    </>
-  );
-}
-
-function User1() {
-  return (
-    <UserContext.Consumer>{(value) => <h1>{value}</h1>}</UserContext.Consumer>
-  );
-}
-function User2() {
-  const user = useContext(UserContext);
-  return <h2> {user}</h2>;
-}
 
 export default App;
