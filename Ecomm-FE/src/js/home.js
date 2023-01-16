@@ -1,4 +1,4 @@
-const BASE_URL = "https://relevel-ecomm-be.herokuapp.com/ecomm/api/v1";
+BASE_URL = "https://relevel-ecomm-be.herokuapp.com/ecomm/api/v1";
 const categoryList = document.getElementById("categoryList");
 
 const logoutBtn = document.getElementById("logoutBtn");
