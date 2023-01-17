@@ -20,12 +20,13 @@ const ThemeProvider = ({ children }) => {
 
   //On mount , get userPreffered theme from local storage
   useEffect(() => {
-    const idDark = localStorage.getItem("dark") === true;
-    setDark(idDark);
+    const isDark = localStorage.getItem("dark") === "true";
+    setDark(isDark);
   }, [dark]);
 
   const toggle = () => {
     //keeping track of theme in localstorage
+    console.log(dark);
     localStorage.setItem("dark", JSON.stringify(!dark));
     setDark(!dark);
   };
@@ -39,4 +40,6 @@ const ThemeProvider = ({ children }) => {
   );
 };
 
-export { ThemeProvider, ThemeContext };
+const useContextValue = () => useContext(ThemeContext);
+
+export { ThemeProvider, ThemeContext, useContextValue };
