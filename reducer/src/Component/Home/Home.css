@@ -1,0 +1,4 @@
+.product_rows {
+  display: flex;
+  flex-wrap: wrap;
+}
