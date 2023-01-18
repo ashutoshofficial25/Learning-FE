@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CountContext } from "../../../App";
 
-const Component2 = ({ counter, setCounter }) => {
+const Component2 = ({ counter }) => {
+  const { setCounter } = useContext(CountContext);
+
   return (
     <div>
       {" "}

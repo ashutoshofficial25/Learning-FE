@@ -12,8 +12,8 @@ const Counter = () => {
     <div>
       <h1>Counter : {counter}</h1>
       <div>
-        <Component1 />
-        {/* <Component2 counter={counter} setCounter={setCounter} /> */}
+        <Component1 counter={counte} setCounter={setCounter} />
+        <Component2 counter={counter} setCounter={setCounter} />
       </div>
     </div>
   );
