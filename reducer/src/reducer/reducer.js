@@ -19,7 +19,7 @@ const reducer = (state, action) => {
     case "REMOVE_FROM_CART":
       let newCart = [...state.cart];
 
-      const index = state.cart.findIndex((c) => c.id === action.id);
+      const index = state.cart.findIndex((c) => c.id == action.id);
 
       if (index > 0) {
         newCart.splice(index, 1);
