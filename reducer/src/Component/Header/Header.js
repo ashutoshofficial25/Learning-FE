@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ search, setSearch }) => {
   return (
     <div className="header">
       <Link to="/" className="header_container">
@@ -12,7 +12,11 @@ const Header = () => {
           alt="logo-img"
         />
         <div className="search_box">
-          <input type="text" />{" "}
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />{" "}
         </div>
       </Link>
       <div className="header_right">

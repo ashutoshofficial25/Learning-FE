@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import "./Home.css";
 
-const Home = () => {
+const Home = ({ search }) => {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -14,15 +14,19 @@ const Home = () => {
   return (
     <div className="home">
       <div className="product_rows">
-        {product?.map((product) => (
-          <Product
-            id={product.id}
-            title={product.title}
-            price={product.price}
-            rating={Math.floor(product.rating?.rate)}
-            image={product.image}
-          />
-        ))}
+        {product
+          ?.filter((product) =>
+            product.title.toLowerCase().includes(search.toLowerCase())
+          )
+          .map((product) => (
+            <Product
+              id={product.id}
+              title={product.title}
+              price={product.price}
+              rating={Math.floor(product.rating?.rate)}
+              image={product.image}
+            />
+          ))}
       </div>
     </div>
   );
