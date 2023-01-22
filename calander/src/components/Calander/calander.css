@@ -1,0 +1,37 @@
+.calander-container {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 70px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.calander-inner-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.calander-display {
+  font-size: 30px;
+  border: 3px solid #fff;
+}
+
+.calander-container-child {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.month-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 20px 0;
+}
+.left-arrow,
+.right-arrow:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
