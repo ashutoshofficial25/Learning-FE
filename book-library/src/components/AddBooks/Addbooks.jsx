@@ -1,6 +1,8 @@
+import axios from "axios";
 import React, { useReducer, useState } from "react";
+import { url } from "../../App";
 
-const Addbooks = () => {
+const Addbooks = ({ getBooks }) => {
   // const [title, setTitle] = useState("");
   // const [author, setAuthor] = useState("");
   // const [genre, setGenre] = useState("");
@@ -52,9 +54,20 @@ const Addbooks = () => {
     }
   };
 
-  const addBook = (e) => {
+  const addBook = async (e) => {
     e.preventDefault();
     console.log(state);
+    const formJSON = structuredClone({ ...state });
+
+    const data = await axios.post(url, formJSON);
+
+    getBooks();
+    setState({
+      title: "",
+      author: "",
+      genre: "",
+      summary: "",
+    });
   };
 
   return (

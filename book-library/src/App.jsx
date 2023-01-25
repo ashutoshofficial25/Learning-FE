@@ -6,7 +6,7 @@ import List from "./components/List/List";
 import axios from "axios";
 import Addbooks from "./components/AddBooks/Addbooks";
 
-const url = "http://localhost:3002/books";
+export const url = "http://localhost:3002/books";
 function App() {
   const [books, setBooks] = useState([]);
   const getBooks = async () => {
@@ -24,7 +24,7 @@ function App() {
         <div className="list-book">{books.data && <List books={books} />}</div>
 
         <div className="add-bk">
-          <Addbooks />
+          <Addbooks getBooks={getBooks} />
         </div>
       </div>
     </div>
