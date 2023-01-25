@@ -1,0 +1,18 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Origins",
+      "author": "J. R. R. Tolkien",
+      "genre": "Thriller",
+      "Summary": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+    },
+    {
+      "id": "2",
+      "title": "Date of Birth",
+      "author": "Mr. John",
+      "genre": "Thriller",
+      "Summary": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+    }
+  ]
+}
