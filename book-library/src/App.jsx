@@ -1,20 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import Nav from "./components/Nav/Nav";
+import List from "./components/List/List";
+import axios from "axios";
+import Addbooks from "./components/AddBooks/Addbooks";
 
+const url = "http://localhost:3002/books";
 function App() {
-  fetch("https://jsonplaceholder.typicode.com/users")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-
-  const requestOptions = {
-    method: "POST",
-    headers: { "content-type": "Application/json" },
-    body: JSON.stringify({ name: "myname" }),
+  const [books, setBooks] = useState([]);
+  const getBooks = async () => {
+    const data = await axios.get(url);
+    setBooks(data);
   };
+
+  useEffect(() => {
+    getBooks();
+  }, []);
   return (
     <div className="App">
-      <h1>Books Library</h1>
+      <Nav />
+      <div className="content">
+        <div className="list-book">{books.data && <List books={books} />}</div>
+
+        <div className="add-bk">
+          <Addbooks />
+        </div>
+      </div>
     </div>
   );
 }
