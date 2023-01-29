@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import About from "./About";
+// import Home from "./Home";
 import "./App.css";
-// import usernames from "./usernames";
-import { transformToUpperCase } from "./utils";
+//Route base code splitting
+
+const Home = lazy(() => import("./Home"));
+const About = lazy(() => import("./About"));
 
 function App() {
-  const [usernames, setUsernames] = useState(null);
-  const onload = () => {
-    import("./usernames").then((modules) =>
-      setUsernames(transformToUpperCase(modules.default))
-    );
-    import("./utils").then((module) => transformToUpperCase(module));
-  };
-
   return (
-    <div className="App">
-      <h1>{JSON.stringify(usernames)}</h1>
-
-      <button onClick={onload}> Load data</button>
-    </div>
+    <BrowserRouter>
+      <Suspense>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
