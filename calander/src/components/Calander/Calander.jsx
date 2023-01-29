@@ -36,7 +36,7 @@ function Calander(props) {
     console.log(selectedMonth, selectedYear);
 
     props.dispatch({
-      type: CHANGE_MONTH,
+      type: "CHANGE_MONTH",
       payload: {
         selectedMonth: selectedMonth,
         selectedYear: selectedYear,
