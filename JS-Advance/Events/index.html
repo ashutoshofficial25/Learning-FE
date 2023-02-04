@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #grandparent {
+        width: 400px;
+        height: 400px;
+        background-color: tomato;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #parent {
+        width: 250px;
+        height: 250px;
+        background-color: green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #child {
+        background-color: blue;
+        height: 150px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Events</h1>
+    <div id="grandparent">
+      <div id="parent">
+        <div id="child"></div>
+      </div>
+    </div>
+    <!-- we should load js asynchronously  -->
+    <!-- <script defer src="sctipt.js"></script> -->
+    <!-- both work async but the defer maintains the order of execution -->
+    <script async src="sctipt.js"></script>
+  </body>
+</html>
