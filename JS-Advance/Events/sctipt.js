@@ -25,26 +25,3 @@ child.addEventListener(
   },
   false
 );
-
-//Evennt capturing
-// grandparent.addEventListener(
-//   "click",
-//   (e) => {
-//     console.log("Grandparent clicked");
-//   },
-//   true
-// );
-// parent.addEventListener(
-//   "click",
-//   (e) => {
-//     console.log("Parent clicked");
-//   },
-//   true
-// );
-// child.addEventListener(
-//   "click",
-//   (e) => {
-//     console.log("Child clicked");
-//   },
-//   true
-// );
